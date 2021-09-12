@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Group from "../containers/Group";
 
+
 export default function Groups({ HOST_IP, API_KEY }) {
   const [config, setConfig] = useState({
     config: {},
@@ -33,40 +34,6 @@ export default function Groups({ HOST_IP, API_KEY }) {
   }, [HOST_IP, API_KEY]);
 
   return (
-    <>
-    <div className="scenepicker">
-      <div className="header">
-        <div className="headline">Scene Picker</div>
-        <div className="iconbox"><i className="fas fa-times"></i></div>
-      </div>
-      <div className="scenecontainer">
-        <div className="scene selected" >
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="name">Nightsky</div>
-          <div className="dynamiccontrol"><i className="far fa-play-circle"></i></div>
-        </div>
-        <div className="scene">
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="name">Galaxy</div>
-        </div>
-        <div className="scene" >
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="name">sunset</div>
-        </div>
-      </div>
-    </div>
     <div className="inner">
       <div className="cardGrid">
         {Object.entries(config.groups)
@@ -84,6 +51,5 @@ export default function Groups({ HOST_IP, API_KEY }) {
           ))}
       </div>
     </div>
-    </>
   );
 }

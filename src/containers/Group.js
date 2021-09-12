@@ -1,3 +1,4 @@
+import Modal from 'react-modal';
 import {
   FaCouch,
   FaChevronDown,
@@ -15,6 +16,35 @@ import ColorPicker from "./ColorPicker";
 import { cieToRgb, colorTemperatureToRgb } from "../color";
 
 const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
+
+  let subtitle;
+
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    },
+  };
+
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = '#f00';
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   const [showContainer, setShowContainer] = useState("closed");
 
   const handleToggleChange = (state) => {
@@ -77,6 +107,24 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
 
   return (
     <div className="groupCard">
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
+        <button onClick={closeModal}>close</button>
+        <div>I am a modal</div>
+        <form>
+          <input />
+          <button>tab navigation</button>
+          <button>stays</button>
+          <button>inside</button>
+          <button>the modal</button>
+        </form>
+      </Modal>
       <div className="row top">
         <div className="gradient" style={getStyle()} >{group["type"] === "Zone" ? <FaCouch /> : <BsFillHouseDoorFill />}</div>
         <div className="text">
@@ -143,7 +191,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
         </div>) ||
         (<div className="row bottom">
           <div className="expandbtn"><FaImages
-            onClick={() => setShowContainer("closed")}
+            onClick={() => setIsOpen(true)}
           /></div>
           <div className="expandbtn"><FaChevronUp
             onClick={() => setShowContainer("closed")}
