@@ -51,6 +51,15 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
     axios.put(`${HOST_IP}/api/${api_key}/groups/${id}/action`, newState);
   };
 
+  const onlineLights = () => {
+    let counter = 0;
+    for (const [index, light] of group.lights.entries()) {
+      if (lights[light]["state"]["reachable"] === true) 
+      counter = counter + 1;
+    }
+    return counter;
+  }
+
   const getStyle = () => {
     if (group.state["any_on"]) {
       let lightBg = "linear-gradient(45deg, ";
@@ -113,7 +122,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
         <div className="gradient" style={getStyle()} >{group["type"] === "Zone" ? <FaCouch /> : <BsFillHouseDoorFill />}</div>
         <div className="text">
           <p className="name">{group.name}</p>
-          <p className="subtext">5 lamps online</p></div>
+          <p className="subtext">{onlineLights()} lamps online</p></div>
         <div className="switchContainer">
           <label className="switch">
             <input
