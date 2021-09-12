@@ -19,17 +19,6 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
 
   let subtitle;
 
-  const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
-    },
-  };
-
   const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {
@@ -111,7 +100,6 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
-        style={customStyles}
         contentLabel="Example Modal"
       >
         <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
@@ -166,9 +154,6 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
           )}
           {showContainer === "lights" && (
             <div className="lights">
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
               {group.lights.map((light) => (
                 <Light
                   HOST_IP={HOST_IP}
