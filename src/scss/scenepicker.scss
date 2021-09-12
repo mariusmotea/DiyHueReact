@@ -1,0 +1,91 @@
+.scenepicker {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  right: 25px;
+  bottom: 25px;
+  backdrop-filter: blur(30px);
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 20px;
+
+  .header {
+    display: flex;
+    font-size: 20px;
+    color: #ccc;
+
+    .headline {
+      flex: 1 1 auto;
+    }
+
+    .iconbox {
+      flex: 0 0 auto;
+    }
+  }
+
+  .scenecontainer {
+    margin-top: 20px;
+
+    .scene {
+      background-size: cover;
+      display: inline-block;
+      border-radius: 15px;
+      display: flex;
+      width: 300px;
+      padding: 10px;
+      /*background: rgba(255,255,255,.09);*/
+      height: 100px;
+      margin-bottom: 20px;
+
+      &.selected {
+        border: 2px solid #ddd;
+        background-size: cover;
+      }
+
+      .color {
+        flex: 0 0 auto;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: rgb(35, 129, 236);
+        display: inline-block;
+        margin-left: -15px;
+        border: 0.1px solid #aaa;
+        box-shadow: 0px 0px 5px 0 rgba(0, 0, 0, 0.5);
+      }
+
+      .color:nth-child(1) {
+        margin-left: 0;
+      }
+
+      .name {
+        flex: 1 1 auto;
+        color: #eee;
+        display: inline-block;
+        height: 30px;
+        width: 100%;
+        margin: 0 15px;
+        line-height: 30px;
+      }
+
+      .dynamiccontrol {
+        flex: 0 0 auto;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        color: #ccc;
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+}
+
+@-moz-document url-prefix() {
+  .scenepicker {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
