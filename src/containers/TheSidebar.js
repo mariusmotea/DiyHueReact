@@ -28,7 +28,7 @@ const TheSidebar = ({ showSidebar }) => {
         <div className="headline">DiyHue</div>
         <div className="hamburger"><FaBars/></div>
       </div>
-      <div class="sidebar">
+      <div className="sidebar">
       <ul>
         <a href="#home">
           <li>
