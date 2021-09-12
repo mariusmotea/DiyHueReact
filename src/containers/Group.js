@@ -152,7 +152,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
           />
         </div>
       </div>
-      <div class="row colorpicker">
+      <div className="row colorpicker">
           {showContainer === "colorPicker" && (
             <ColorPicker
               HOST_IP={HOST_IP}

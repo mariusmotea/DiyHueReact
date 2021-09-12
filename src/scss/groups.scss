@@ -1,10 +1,17 @@
+.cardGrid{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .groupCard {
+  flex-shrink: 0;
   width: 400px;
   backdrop-filter: blur(30px);
   background: rgba(255, 255, 255, 0.09);
   background: linear-gradient(45deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 100%);
   border-radius: 20px;
   margin-bottom: 20px;
+  margin-right: 20px;
   box-sizing: border-box;
   border: 1px solid rgba(255, 255, 255, 0.1);
 
