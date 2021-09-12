@@ -16,6 +16,11 @@ import Light from "./GroupLight";
 import ColorPicker from "./ColorPicker";
 import { cieToRgb, colorTemperatureToRgb } from "../color";
 
+
+import nightsky from "../static/images/nightsky.jpg";
+import sunset from "../static/images/sunset.jpg";
+import galaxy from "../static/images/galaxy.jpg";
+
 const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
 
   let subtitle;
@@ -28,7 +33,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00';
+    // subtitle.style.color = '#f00';
   }
 
   function closeModal() {
@@ -54,8 +59,8 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
   const onlineLights = () => {
     let counter = 0;
     for (const [index, light] of group.lights.entries()) {
-      if (lights[light]["state"]["reachable"] === true) 
-      counter = counter + 1;
+      if (lights[light]["state"]["reachable"] === true)
+        counter = counter + 1;
     }
     return counter;
   }
@@ -112,11 +117,38 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
         onRequestClose={closeModal}
         contentLabel="Example Modal"
       >
-        <div className="header">
-          <div ref={(_subtitle) => (subtitle = _subtitle)} className="headline">Hello</div>
-          <div className="iconbox"><button onClick={closeModal}><FaTimes /></button></div>
+      <div className="header">
+        <div className="headline">Scene Picker</div>
+        <div className="iconbox"><button onClick={closeModal}><FaTimes /></button></div>
+      </div>
+      <div className="scenecontainer">
+        <div className="scene selected" style={{background: `url(${nightsky})`, backgroundSize: 'cover',}}>
+          <div className="color"></div>
+          <div className="color"></div>
+          <div className="color"></div>
+          <div className="color"></div>
+          <div className="color"></div>
+          <div className="name">Nightsky</div>
+          <div className="dynamiccontrol"><i className="far fa-play-circle"></i></div>
         </div>
-        
+        <div className="scene"style={{background: `url(${galaxy})`, backgroundSize: 'cover',}}>
+          <div className="color"></div>
+          <div className="color"></div>
+          <div className="color"></div>
+          <div className="color"></div>
+          <div className="color"></div>
+          <div className="name">Galaxy</div>
+        </div>
+        <div className="scene"style={{background: `url(${sunset})`, backgroundSize: 'cover',}}>
+          <div className="color"></div>
+          <div className="color"></div>
+          <div className="color"></div>
+          <div className="color"></div>
+          <div className="color"></div>
+          <div className="name">sunset</div>
+        </div>
+      </div>
+
       </Modal>
       <div className="row top">
         <div className="gradient" style={getStyle()} >{group["type"] === "Zone" ? <FaCouch /> : <BsFillHouseDoorFill />}</div>
@@ -149,28 +181,28 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
         </div>
       </div>
       <div className="row colorpicker">
-          {showContainer === "colorPicker" && (
-            <ColorPicker
-              HOST_IP={HOST_IP}
-              api_key={api_key}
-              lights={lights}
-              groupLights={group.lights}
-            />
-          )}
-          {showContainer === "lights" && (
-            <div className="lights">
-              {group.lights.map((light) => (
-                <Light
-                  HOST_IP={HOST_IP}
-                  api_key={api_key}
-                  key={light}
-                  id={light}
-                  light={lights[light]}
-                />
-              ))}
+        {showContainer === "colorPicker" && (
+          <ColorPicker
+            HOST_IP={HOST_IP}
+            api_key={api_key}
+            lights={lights}
+            groupLights={group.lights}
+          />
+        )}
+        {showContainer === "lights" && (
+          <div className="lights">
+            {group.lights.map((light) => (
+              <Light
+                HOST_IP={HOST_IP}
+                api_key={api_key}
+                key={light}
+                id={light}
+                light={lights[light]}
+              />
+            ))}
 
-            </div>
-          )}
+          </div>
+        )}
       </div>
 
       {showContainer === "closed" && (
