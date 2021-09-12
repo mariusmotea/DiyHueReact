@@ -30,7 +30,6 @@ const TheSidebar = ({ showSidebar }) => {
       </div>
       <div class="sidebar">
       <ul>
-        <li className="iconBox"></li>
         <a href="#home">
           <li>
             <FaHome style={{ color: "#0092FF" }} /> Home
