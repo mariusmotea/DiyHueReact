@@ -1,6 +1,8 @@
 import Modal from 'react-modal';
 import axios from "axios";
 import { FaTimes } from "react-icons/fa";
+import { cieToRgb, colorTemperatureToRgb } from "../color";
+
 import nightsky from "../static/images/nightsky.jpg";
 import sunset from "../static/images/sunset.jpg";
 import galaxy from "../static/images/galaxy.jpg";
@@ -9,6 +11,10 @@ import galaxy from "../static/images/galaxy.jpg";
 const Scenes = ({ HOST_IP, api_key, groupId, scenes, sceneModal, setSceneModal }) => {
   const applyScene = (scene) => {
     axios.put(`${HOST_IP}/api/${api_key}/groups/0/action`, { scene: scene });
+  };
+
+  const applyLightState = (light, state) => {
+    axios.put(`${HOST_IP}/api/${api_key}/lights/${light}/state`, state);
   };
 
   function openModal() {
@@ -24,6 +30,18 @@ const Scenes = ({ HOST_IP, api_key, groupId, scenes, sceneModal, setSceneModal }
     setSceneModal(false);
   }
 
+  const getStyle = (lightstate) => {
+    let color;
+    if ("xy" in lightstate) {
+      color = cieToRgb(lightstate["xy"][0], lightstate["xy"][1], 254);
+    } else if ("ct" in lightstate) {
+      color = colorTemperatureToRgb(lightstate["ct"]);
+    } else {
+      color = "rgba(200,200,200,1)";
+    }
+    return color;
+  }
+
   return (
     <Modal
       isOpen={sceneModal}
@@ -35,17 +53,21 @@ const Scenes = ({ HOST_IP, api_key, groupId, scenes, sceneModal, setSceneModal }
         <div className="headline">Scene Picker</div>
         <div className="iconbox"><button onClick={closeModal}><FaTimes /></button></div>
       </div>
-      <div className="scenecontainer">
+      <div className="scenecontainer"
+      >
         {Object.entries(scenes)
           .filter((scene) => scene[1].group === groupId)
           .map(([id, scene]) => (
-            <div className="scene selected" style={{ background: `url(${nightsky})`, backgroundSize: 'cover', }}>
-              <div className="color"></div>
-              <div className="color"></div>
-              <div className="color"></div>
-              <div className="color"></div>
-              <div className="color"></div>
-              <div className="name">Nightsky</div>
+            <div className="scene selected" style={{ background: `url(${nightsky})`, backgroundSize: 'cover', }} onClick={() => applyScene(id)}>
+              {Object.entries(scene.lightstates)
+                .map(([light, state]) => (
+                  <div className="color"
+                    style={{ background: `${getStyle(state)}` }}
+                    onClick={() => applyLightState(light, state)}
+                  >
+                  </div>
+                ))}
+              <div className="name">{scene.name}</div>
               <div className="dynamiccontrol"><i className="far fa-play-circle"></i></div>
             </div>
           ))}

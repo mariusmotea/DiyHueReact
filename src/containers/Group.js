@@ -3,8 +3,7 @@ import {
   FaChevronDown,
   FaChevronUp,
   FaImages,
-  FaLightbulb,
-  FaTimes
+  FaLightbulb
 
 } from "react-icons/fa";
 import { BsFillHouseDoorFill } from "react-icons/bs";
@@ -98,7 +97,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
         setSceneModal={setSceneModal}
       />
       <div className="row top">
-        <div className="gradient" style={getStyle()} >{group["type"] === "Zone" ? <FaCouch /> : <BsFillHouseDoorFill />}</div>
+        <div className="gradient" style={getStyle()} >{group["type"] === "Zone" ? <FaCouch style={{ color: "#8400FF" }}/> : <BsFillHouseDoorFill style={{ color: "#8400FF" }}/>}</div>
         <div className="text">
           <p className="name">{group.name}</p>
           <p className="subtext">{onlineLights()} lamps online</p></div>
