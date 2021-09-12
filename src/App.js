@@ -10,6 +10,7 @@ import "./scss/groups.scss";
 import "./scss/light.scss";
 import "./scss/notification.scss";
 import "./scss/modal.scss";
+import "./scss/scenepicker.scss";
 
 const loading = (
   <div className="pt-3 text-center">
