@@ -1,4 +1,3 @@
-import Modal from 'react-modal';
 import {
   FaCouch,
   FaChevronDown,
@@ -17,30 +16,9 @@ import ColorPicker from "./ColorPicker";
 import { cieToRgb, colorTemperatureToRgb } from "../color";
 
 
-import nightsky from "../static/images/nightsky.jpg";
-import sunset from "../static/images/sunset.jpg";
-import galaxy from "../static/images/galaxy.jpg";
-
 const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
-
-  let subtitle;
-
-  const [modalIsOpen, setIsOpen] = useState(false);
-
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    // subtitle.style.color = '#f00';
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
-
   const [showContainer, setShowContainer] = useState("closed");
+  const [sceneModal, setSceneModal] = useState(false);
 
   const handleToggleChange = (state) => {
     const newState = { on: state };
@@ -111,45 +89,14 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
 
   return (
     <div className="groupCard">
-      <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        contentLabel="Example Modal"
-      >
-      <div className="header">
-        <div className="headline">Scene Picker</div>
-        <div className="iconbox"><button onClick={closeModal}><FaTimes /></button></div>
-      </div>
-      <div className="scenecontainer">
-        <div className="scene selected" style={{background: `url(${nightsky})`, backgroundSize: 'cover',}}>
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="name">Nightsky</div>
-          <div className="dynamiccontrol"><i className="far fa-play-circle"></i></div>
-        </div>
-        <div className="scene"style={{background: `url(${galaxy})`, backgroundSize: 'cover',}}>
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="name">Galaxy</div>
-        </div>
-        <div className="scene"style={{background: `url(${sunset})`, backgroundSize: 'cover',}}>
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="color"></div>
-          <div className="name">sunset</div>
-        </div>
-      </div>
-
-      </Modal>
+      <Scenes
+        HOST_IP={HOST_IP}
+        api_key={api_key}
+        groupId={id}
+        scenes={scenes}
+        sceneModal={sceneModal}
+        setSceneModal={setSceneModal}
+      />
       <div className="row top">
         <div className="gradient" style={getStyle()} >{group["type"] === "Zone" ? <FaCouch /> : <BsFillHouseDoorFill />}</div>
         <div className="text">
@@ -213,7 +160,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
         </div>) ||
         (<div className="row bottom">
           <div className="expandbtn"><FaImages
-            onClick={() => setIsOpen(true)}
+            onClick={() => setSceneModal(true)}
           /></div>
           <div className="expandbtn"><FaChevronUp
             onClick={() => setShowContainer("closed")}
