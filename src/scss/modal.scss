@@ -8,6 +8,7 @@
   .ReactModal__Content {
     &.ReactModal__Content--after-open {
       backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
       background: rgba(255, 255, 255, 0.09) !important;
       border-radius: 20px !important;
       box-sizing: border-box;
