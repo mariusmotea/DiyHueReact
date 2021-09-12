@@ -4,7 +4,8 @@ import {
   FaChevronDown,
   FaChevronUp,
   FaImages,
-  FaLightbulb
+  FaLightbulb,
+  FaTimes
 
 } from "react-icons/fa";
 import { BsFillHouseDoorFill } from "react-icons/bs";
@@ -111,16 +112,11 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
         onRequestClose={closeModal}
         contentLabel="Example Modal"
       >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-        <button onClick={closeModal}>close</button>
-        <div>I am a modal</div>
-        <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
-        </form>
+        <div className="header">
+          <div ref={(_subtitle) => (subtitle = _subtitle)} className="headline">Hello</div>
+          <div className="iconbox"><button onClick={closeModal}><FaTimes /></button></div>
+        </div>
+        
       </Modal>
       <div className="row top">
         <div className="gradient" style={getStyle()} >{group["type"] === "Zone" ? <FaCouch /> : <BsFillHouseDoorFill />}</div>

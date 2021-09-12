@@ -9,7 +9,7 @@ import "./scss/forms.scss";
 import "./scss/groups.scss";
 import "./scss/light.scss";
 import "./scss/notification.scss";
-
+import "./scss/modal.scss";
 
 const loading = (
   <div className="pt-3 text-center">
