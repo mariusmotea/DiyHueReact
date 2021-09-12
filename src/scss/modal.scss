@@ -45,3 +45,17 @@
     }
   }
 }
+
+@media screen and (max-width: 750px) {
+}
+
+@-moz-document url-prefix() {
+
+    .ReactModalPortal {
+        .ReactModal__Overlay {
+          &.ReactModal__Overlay--after-open {
+          }
+          background-color: rgba(252, 8, 8, .5);
+        }
+    }
+}
