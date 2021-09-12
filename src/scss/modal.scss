@@ -1,7 +1,6 @@
 .ReactModalPortal {
   .ReactModal__Overlay {
-    &.ReactModal__Overlay--after-open {
-    }
+    
     background-color: rgba(255, 255, 255, 0) !important;
   }
 
@@ -53,8 +52,7 @@
 
     .ReactModalPortal {
         .ReactModal__Overlay {
-          &.ReactModal__Overlay--after-open {
-          }
+          
           background-color: rgba(252, 8, 8, .5);
         }
     }

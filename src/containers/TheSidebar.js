@@ -32,68 +32,68 @@ const TheSidebar = ({ showSidebar }) => {
       <ul>
         <a href="#home">
           <li>
-            <FaHome style={{ color: "#0092FF" }} /> Home
+            <FaHome style={{ color: "#0092FF" }} /> <p>Home</p>
           </li>
         </a>
         <a href="#lights">
           <li>
-            <FaLightbulb style={{ color: "#FF9E00" }} /> Lights
+            <FaLightbulb style={{ color: "#FF9E00" }} /> <p>Lights</p>
           </li>
         </a>
         <a href="#linkbutton">
           <li>
-            <FaLink style={{ color: "#FF92FF" }} /> Link Button
+            <FaLink style={{ color: "#FF92FF" }} /> <p>Link Button</p>
           </li>
         </a>
         <a href="#bridge">
           <li>
-            <MdSettingsRemote style={{ color: "#92FFFF" }} /> Bridge
+            <MdSettingsRemote style={{ color: "#92FFFF" }} /> <p>Bridge</p>
           </li>
         </a>
         <a href="#devices">
           <li>
-            <RiBubbleChartLine style={{ color: "#764600" }} /> Devices
+            <RiBubbleChartLine style={{ color: "#764600" }} /> <p>Devices</p>
           </li>
         </a>
         <a href="#mqtt">
           <li>
-            <RiMessage2Line style={{ color: "#0084FF" }} /> MQTT
+            <RiMessage2Line style={{ color: "#0084FF" }} /> <p>MQTT</p>
           </li>
         </a>
         <a href="#deconz">
           <li>
-            <RiHomeWifiLine style={{ color: "#42A138" }} /> Deconz
+            <RiHomeWifiLine style={{ color: "#42A138" }} /> <p>Deconz</p>
           </li>
         </a>
         <a href="#tradfri">
           <li>
             <IoEllipsisVerticalCircleOutline style={{ color: "#CCA138" }} />{" "}
-            Tradfri
+            <p>Tradfri</p>
           </li>
         </a>
         <a href="#hue">
           <li>
-            <FaInstagram style={{ color: "#8400FF" }} /> Hue Bridge
+            <FaInstagram style={{ color: "#8400FF" }} /> <p>Hue Bridge</p>
           </li>
         </a>
         <a href="#diyhue">
           <li>
-            <SiZigbee style={{ color: "#CCCCCC" }} /> DiyHue Bridge
+            <SiZigbee style={{ color: "#CCCCCC" }} /> <p>DiyHue Bridge</p>
           </li>
         </a>
         <a href="#alarm">
           <li>
-            <RiAlarmWarningLine style={{ color: "#AE2D00" }} /> Alarm
+            <RiAlarmWarningLine style={{ color: "#AE2D00" }} /> <p>Alarm</p>
           </li>
         </a>
         <a href="#settings">
           <li>
-            <FaCog style={{ color: "#FFFF00" }} /> Settings
+            <FaCog style={{ color: "#FFFF00" }} /> <p>Settings</p>
           </li>
         </a>
         <a href="/logout">
           <li>
-            <FaSignOutAlt style={{ color: "#fff" }} /> Logout
+            <FaSignOutAlt style={{ color: "#fff" }} /> <p>Logout</p>
           </li>
         </a>
       </ul>
