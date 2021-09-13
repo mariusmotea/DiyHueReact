@@ -7,12 +7,12 @@
       color: #eee;
       font-size: 18px;
       display: flex;
+      align-items: center;
 
       svg{
         width: 30px;
         margin-right: 10px;
         flex-shrink: 0;
-        margin-top: 2px;
       }
 
       p{
