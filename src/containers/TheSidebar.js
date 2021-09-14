@@ -6,7 +6,8 @@ import {
   FaCog,
   FaSignOutAlt,
   FaInstagram,
-  FaBars
+  FaBars,
+  FaRing
 } from "react-icons/fa";
 import { SiZigbee } from "react-icons/si";
 import {
@@ -17,6 +18,7 @@ import {
 } from "react-icons/ri";
 import { MdSettingsRemote } from "react-icons/md";
 import { IoEllipsisVerticalCircleOutline } from "react-icons/io5";
+
 import logo from "../static/images/logo.svg";
 import "../scss/sidebar.scss";
 
@@ -42,17 +44,17 @@ const TheSidebar = ({ showSidebar }) => {
         </a>
         <a href="#linkbutton">
           <li>
-            <FaLink style={{ color: "#FF92FF" }} /> <p>Link Button</p>
+            <FaLink style={{ color: "#9b59b6" }} /> <p>Link Button</p>
           </li>
         </a>
         <a href="#bridge">
           <li>
-            <MdSettingsRemote style={{ color: "#92FFFF" }} /> <p>Bridge</p>
+            <FaRing style={{ color: "#92FFFF" }} /> <p>Bridge</p>
           </li>
         </a>
         <a href="#devices">
           <li>
-            <RiBubbleChartLine style={{ color: "#764600" }} /> <p>Devices</p>
+            <MdSettingsRemote style={{ color: "#7f8c8d" }} /> <p>Devices</p>
           </li>
         </a>
         <a href="#mqtt">
@@ -78,17 +80,17 @@ const TheSidebar = ({ showSidebar }) => {
         </a>
         <a href="#diyhue">
           <li>
-            <SiZigbee style={{ color: "#CCCCCC" }} /> <p>DiyHue Bridge</p>
+            <SiZigbee style={{ color: "#16a085" }} /> <p>DiyHue Bridge</p>
           </li>
         </a>
         <a href="#alarm">
           <li>
-            <RiAlarmWarningLine style={{ color: "#AE2D00" }} /> <p>Alarm</p>
+            <RiAlarmWarningLine style={{ color: "#c0392b" }} /> <p>Alarm</p>
           </li>
         </a>
         <a href="#settings">
           <li>
-            <FaCog style={{ color: "#FFFF00" }} /> <p>Settings</p>
+            <FaCog style={{ color: "#bdc3c7" }} /> <p>Settings</p>
           </li>
         </a>
         <a href="/logout">
