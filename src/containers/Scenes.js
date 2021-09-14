@@ -58,7 +58,8 @@ const Scenes = ({ HOST_IP, api_key, groupId, scenes, sceneModal, setSceneModal }
         {Object.entries(scenes)
           .filter((scene) => scene[1].group === groupId)
           .map(([id, scene]) => (
-            <div className="scene selected" style={{ background: `url(${nightsky})`, backgroundSize: 'cover', }} onClick={() => applyScene(id)}>
+            <div className="scene" style={{ background: `url(${nightsky})`, backgroundSize: 'cover', }} onClick={() => applyScene(id)}>
+              <div className="dimmer">
               {Object.entries(scene.lightstates)
                 .map(([light, state]) => (
                   <div className="color"
@@ -68,6 +69,7 @@ const Scenes = ({ HOST_IP, api_key, groupId, scenes, sceneModal, setSceneModal }
                   </div>
                 ))}
               <div className="name">{scene.name}</div>
+              </div>
               <div className="dynamiccontrol"><i className="far fa-play-circle"></i></div>
             </div>
           ))}
