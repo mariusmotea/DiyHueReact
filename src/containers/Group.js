@@ -3,7 +3,8 @@ import {
   FaChevronDown,
   FaChevronUp,
   FaImages,
-  FaLightbulb
+  FaLightbulb,
+  FaPalette
 
 } from "react-icons/fa";
 import { BsFillHouseDoorFill } from "react-icons/bs";
@@ -158,6 +159,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
           /></div>
         </div>) ||
         (<div className="row bottom">
+          <div className="expandbtn"><FaPalette/></div>
           <div className="expandbtn"><FaImages
             onClick={() => setSceneModal(true)}
           /></div>
