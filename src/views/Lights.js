@@ -84,6 +84,8 @@ export default function Lights({ HOST_IP, API_KEY }) {
 
   return (
     <div className="content">
+      <div className="inner">
+        <div className="devicecontainer">
       {type !== "none" && (
         <Flash
           type={type}
@@ -126,6 +128,8 @@ export default function Lights({ HOST_IP, API_KEY }) {
           />
         ))}
       </div>
+    </div>
+    </div>
     </div>
   );
 }
