@@ -8,6 +8,7 @@ import {
 
 } from "react-icons/fa";
 import { BsFillHouseDoorFill } from "react-icons/bs";
+import { MdInvertColors } from "react-icons/md";
 import { useState } from "react";
 import axios from "axios";
 import Scenes from "./Scenes";
@@ -159,7 +160,9 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
           /></div>
         </div>) ||
         (<div className="row bottom">
-          <div className="expandbtn"><FaPalette/></div>
+          <div className="expandbtn"><FaPalette 
+          onClick={() => setShowContainer("#")}/>
+          </div>
           <div className="expandbtn"><FaImages
             onClick={() => setSceneModal(true)}
           /></div>
@@ -168,6 +171,9 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
           /></div>
           <div className="expandbtn"><FaLightbulb
             onClick={() => setShowContainer("lights")}
+          /></div>
+          <div className="expandbtn"><MdInvertColors
+            onClick={() => setShowContainer("#")}
           /></div>
         </div>)}
 
