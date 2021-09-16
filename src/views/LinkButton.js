@@ -38,7 +38,7 @@ export default function LinkButton({ HOST_IP, API_KEY }) {
         />
       )}
       <div className="contentContainer">
-      <div class="headline">Link Button</div>
+      <div className="headline">Link Button</div>
         <p>Push this button to accept the pairing of the requested app</p>
         <div className="linkbtn" onClick={() => pushLinkButton()}>
           Link App
