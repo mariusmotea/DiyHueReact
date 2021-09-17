@@ -14,6 +14,8 @@ import axios from "axios";
 import Scenes from "./Scenes";
 import Light from "./GroupLight";
 import ColorPicker from "./ColorPicker";
+import ColorTempPicker from "./ColorTempPicker";
+import debounce from 'lodash.debounce';
 import { cieToRgb, colorTemperatureToRgb } from "../color";
 
 
@@ -137,6 +139,14 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
             groupLights={group.lights}
           />
         )}
+        {showContainer === "colorTempPicker" && (
+          <ColorTempPicker
+            HOST_IP={HOST_IP}
+            api_key={api_key}
+            groupId={id}
+            group={group}
+          />
+        )}
         {showContainer === "lights" && (
           <div className="lights">
             {group.lights.map((light) => (
@@ -161,7 +171,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
         </div>) ||
         (<div className="row bottom">
           <div className="expandbtn"><FaPalette 
-          onClick={() => setShowContainer("#")}/>
+          onClick={() => setShowContainer("colorPicker")}/>
           </div>
           <div className="expandbtn"><FaImages
             onClick={() => setSceneModal(true)}
@@ -173,7 +183,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
             onClick={() => setShowContainer("lights")}
           /></div>
           <div className="expandbtn"><MdInvertColors
-            onClick={() => setShowContainer("#")}
+            onClick={() => setShowContainer("colorTempPicker")}
           /></div>
         </div>)}
 
