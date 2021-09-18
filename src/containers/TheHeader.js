@@ -39,7 +39,9 @@ const TheHeader = ({ HOST_IP, showSidebar, setShowSidebar, API_KEY }) => {
 
 
     <div className="topbarRight">
-      <div className="hamburger"><FaBars/></div>
+      <div className="hamburger"
+        onClick={() => setShowSidebar(!showSidebar)}>
+        <FaBars /></div>
       <div className="onbtn">
         <p>All lights on/off</p>
         <div className="switchContainer">
