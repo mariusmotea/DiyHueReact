@@ -170,19 +170,19 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
           /></div>
         </div>) ||
         (<div className="row bottom">
-          <div className="expandbtn"><FaPalette 
+          <div className="btn"><FaPalette 
           onClick={() => setShowContainer("colorPicker")}/>
           </div>
-          <div className="expandbtn"><FaImages
+          <div className="btn"><FaImages
             onClick={() => setSceneModal(true)}
           /></div>
           <div className="expandbtn"><FaChevronUp
             onClick={() => setShowContainer("closed")}
           /></div>
-          <div className="expandbtn"><FaLightbulb
+          <div className="btn"><FaLightbulb
             onClick={() => setShowContainer("lights")}
           /></div>
-          <div className="expandbtn"><MdInvertColors
+          <div className="btn"><MdInvertColors
             onClick={() => setShowContainer("colorTempPicker")}
           /></div>
         </div>)}
