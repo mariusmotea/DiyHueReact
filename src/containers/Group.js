@@ -133,25 +133,57 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
       </div>
       <AnimateSharedLayout>
         <motion.div className="row colorpicker">
-          <AnimatePresence>
+          <AnimatePresence initial={false}>
             {showContainer === "colorPicker" && (
-              <ColorPicker
-                HOST_IP={HOST_IP}
-                api_key={api_key}
-                lights={lights}
-                groupLights={group.lights}
-              />
+              <motion.section
+                key="content"
+                initial="collapsed"
+                animate="open"
+                exit="collapsed"
+                variants={{
+                  open: { opacity: 1, height: "auto" },
+                  collapsed: { opacity: 0, height: 0 }
+                }}
+                transition={{ duration: 0.8 }}
+              >
+                <ColorPicker
+                  HOST_IP={HOST_IP}
+                  api_key={api_key}
+                  lights={lights}
+                  groupLights={group.lights}
+                />
+              </motion.section>
             )}
             {showContainer === "colorTempPicker" && (
-              <ColorTempPicker
-                HOST_IP={HOST_IP}
-                api_key={api_key}
-                groupId={id}
-                group={group}
-              />
+              <motion.section
+                key="content"
+                initial="collapsed"
+                animate="open"
+                exit="collapsed"
+                variants={{
+                  open: { opacity: 1, height: "auto" },
+                  collapsed: { opacity: 0, height: 0 }
+                }}
+                transition={{ duration: 0.8 }}
+              >
+                <ColorTempPicker
+                  HOST_IP={HOST_IP}
+                  api_key={api_key}
+                  groupId={id}
+                  group={group}
+                />
+              </motion.section>
             )}
             {showContainer === "lights" && (
-              <div className="lights">
+              <motion.div className="lights"
+                initial="collapsed"
+                animate="open"
+                exit="collapsed"
+                variants={{
+                  open: { opacity: 1, height: "auto" },
+                  collapsed: { opacity: 0, height: 0 }
+                }}
+                transition={{ duration: 0.8 }}>
                 {group.lights.map((light) => (
                   <Light
                     HOST_IP={HOST_IP}
@@ -161,7 +193,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
                     light={lights[light]}
                   />
                 ))}
-              </div>
+              </motion.div>
             )}
           </AnimatePresence>
         </motion.div>

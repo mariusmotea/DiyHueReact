@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useState } from "react";
 import { colorTemperatureToRgb, rgbToCie } from "../color";
 import iro from "@jaames/iro";
 import axios from "axios";
-import { motion } from "framer-motion"
 
 export default function KelvinPicker({
   HOST_IP,
@@ -56,12 +55,7 @@ export default function KelvinPicker({
       picker.current.on("input:end", onChange);
     }
   }, [onChange]);
-  return <motion.div
-    layout
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ duration: 0.5 }}
-    exit={{ opacity: 0 }}
+  return <div
     ref={pickerRef}>
-  </motion.div>;
+  </div>;
 }
