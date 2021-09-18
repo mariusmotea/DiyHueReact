@@ -114,8 +114,6 @@ body {
   .hamburger {
     display: flex;
     color: #ccc;
-    /*flex: 0 0 auto;*/
-    /*margin: 12px 10px 0 0;*/
     align-items: center;
     font-size: 25px;
     margin-right: auto;
@@ -143,6 +141,20 @@ body {
 @media screen and (max-width: 750px) {
   body {
     background-image: url("../static/images/mobile_background.png");
+  }
+  .columnLeft{
+    &.active{
+      position: absolute;
+      top:0;
+      left:0;
+      z-index: 9000;
+    }
+  }
+  .hamburger{
+    position: absolute;
+    top:10px;
+      left:200px;
+      z-index: 9001;
   }
 }
 
