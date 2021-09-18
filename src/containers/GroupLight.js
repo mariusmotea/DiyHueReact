@@ -32,6 +32,7 @@ const Light = ({ HOST_IP, api_key, id, light }) => {
     <motion.div className="groupCard light"
       layout
       initial={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
       animate={{ opacity: 1 }}>
       <div className="row top">
         <div className="gradient" style={getStyle()}><FaLightbulb /></div>
