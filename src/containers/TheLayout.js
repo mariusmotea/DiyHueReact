@@ -4,7 +4,7 @@ import { TheContent, TheSidebar, TheHeader } from "./index";
 
 const TheLayout = ({ HOST_IP, API_KEY }) => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
-  const [showSidebar, setShowSidebar] = useState(!isMobile);
+  const [showSidebar, setShowSidebar] = useState(isMobile);
 
   return (
     <>
