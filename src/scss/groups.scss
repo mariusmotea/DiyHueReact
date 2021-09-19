@@ -67,7 +67,13 @@
         fill: #ddd;
         font-size: 25px;
         margin-top: 11px;
+      
+      &.dark{
+        fill: #222;
       }
+      }
+
+
     }
 
     .lights{

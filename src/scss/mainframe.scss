@@ -42,6 +42,7 @@ body {
   flex-shrink: 0;
   width: 0;
   backdrop-filter: blur(20px);
+  webkit-backdrop-filter: blur(20px);
   background: rgba(0, 0, 0, 0.2);
 
   &.active{
@@ -148,6 +149,8 @@ body {
       top:0;
       left:0;
       z-index: 9000;
+      backdrop-filter: blur(20px);
+      webkit-backdrop-filter: blur(20px);
     }
   }
 
