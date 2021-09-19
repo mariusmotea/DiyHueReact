@@ -82,7 +82,7 @@ const Bridge = ({ HOST_IP, API_KEY }) => {
         />
       )}
       <div className="contentContainer">
-      <div class="headline">Bridge Config</div>
+      <div className="headline">Bridge Config</div>
         <form className="add-form" onSubmit={(e) => onSubmit(e)}>
           <div className="form-control">
             <label>Bridge Name</label>
