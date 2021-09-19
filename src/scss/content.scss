@@ -6,10 +6,33 @@
     padding: 20px;
     width: 100%;
 
+    &.spacer{
+        margin-bottom: 20px;
+    }
 
     .headline{
         font-size: 20px;
         color: #ccc;
         margin-bottom: 25px;
+    }
+
+    a{
+        color:#aaa;
+        margin-left: 5px;
+        
+    }
+
+    .switchContainer{
+        height: 55px;
+        margin: 20px 0 0 5px;
+
+        p{
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+    }
+
+    p{
+        color: #eee;
     }
 }
