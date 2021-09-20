@@ -176,7 +176,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
                   },
                 }}
                 transition={{
-                  duration: 0.8,
+                  duration: 0.3,
                 }}
               >
                 <input
@@ -205,15 +205,17 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
                   variants={{
                     open: {
                       opacity: 1,
+                      scale: 1,
                       height: "auto",
                     },
                     collapsed: {
                       opacity: 0,
+                      scale: .5,
                       height: 0,
                     },
                   }}
                   transition={{
-                    duration: 0.8,
+                    duration: 0.3,
                   }}
                 >
                   <ColorPicker
@@ -234,6 +236,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
                     open: {
                       opacity: 1,
                       height: "auto",
+                      scale: 1,
                     },
                     collapsed: {
                       opacity: 0,
