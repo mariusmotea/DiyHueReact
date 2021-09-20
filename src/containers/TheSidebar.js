@@ -93,14 +93,14 @@ const TheSidebar = ({ showSidebar }) => {
             <FaCog style={{ color: "#bdc3c7" }} /> <p>Settings</p>
           </li>
         </a>
-        <a href="/about">
+        <a href="#about">
           <li>
-            <FaSignOutAlt style={{ color: "#fff" }} /> <p>About</p>
+            <SiAboutDotMe style={{ color: "#fff" }} /> <p>About</p>
           </li>
         </a>
         <a href="/logout">
           <li>
-            <SiAboutDotMe style={{ color: "#fff" }} /> <p>Logout</p>
+            <FaSignOutAlt style={{ color: "#fff" }} /> <p>Logout</p>
           </li>
         </a>
       </ul>

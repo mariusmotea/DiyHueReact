@@ -303,10 +303,29 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
 
                 <FaImages onClick={() => setSceneModal(true)} />
               </div>
-              <div className="expandbtn">
+              <AnimatePresence>
+              <motion.div className="expandbtn"
+              initial="collapsed"
+              animate="open"
+              exit="collapsed"
+              variants={{
+                open: {
+                  opacity: 1,
+                  rotate: 0,
+                },
+                collapsed: {
+                  opacity: 0,
+                  rotate: 180,
+                },
+              }}
+              transition={{
+                duration: 0.8,
+              }}
+              >
 
                 <FaChevronUp onClick={() => setShowContainer("closed")} />
-              </div>
+              </motion.div>
+              </AnimatePresence>
               <div className="btn">
 
                 <FaLightbulb onClick={() => setShowContainer("lights")} />
