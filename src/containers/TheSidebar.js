@@ -18,6 +18,7 @@ import {
 } from "react-icons/ri";
 import { MdSettingsRemote } from "react-icons/md";
 import { IoEllipsisVerticalCircleOutline } from "react-icons/io5";
+import { SiAboutDotMe } from "react-icons/si";
 
 import logo from "../static/images/logo.svg";
 import "../scss/sidebar.scss";
@@ -92,9 +93,14 @@ const TheSidebar = ({ showSidebar }) => {
             <FaCog style={{ color: "#bdc3c7" }} /> <p>Settings</p>
           </li>
         </a>
+        <a href="/about">
+          <li>
+            <FaSignOutAlt style={{ color: "#fff" }} /> <p>About</p>
+          </li>
+        </a>
         <a href="/logout">
           <li>
-            <FaSignOutAlt style={{ color: "#fff" }} /> <p>Logout</p>
+            <SiAboutDotMe style={{ color: "#fff" }} /> <p>Logout</p>
           </li>
         </a>
       </ul>
