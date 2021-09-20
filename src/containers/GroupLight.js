@@ -47,7 +47,7 @@ const Light = ({ HOST_IP, api_key, id, light }) => {
           type="range"
           min="1"
           max="254"
-          defaultValue="50"
+          defaultValue={light["state"]["bri"]}
           className="slider"
           onChange={(e) =>
             switchLight({ bri: parseInt(e.currentTarget.value) })
