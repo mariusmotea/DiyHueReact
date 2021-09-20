@@ -25,7 +25,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
 
   const barIconVariants = {
     opened: {
-      opacity: 1
+      opacity: 1,
     },
     closed: {
       opacity: 0,
@@ -43,6 +43,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
     };
   }
   inspectLightsCapabilities();
+  console.log(lightsCapabilities);
 
   const defaultContainerView = () => {
     if (showContainer === "closed") {
@@ -315,26 +316,30 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
           </AnimatePresence>
         </motion.div>
       </AnimateSharedLayout>
-      <div className="row bottom">
         <AnimatePresence>
+      <div className="row bottom">
+
           <motion.div className={`btn ${lightsCapabilities.includes('xy') ? "" : "disabled"}`}
             initial="closed"
             animate={showContainer === "closed" ? "closed" : "opened"}
-            exit="closed"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
             variants={barIconVariants}>
             <FaPalette onClick={lightsCapabilities.includes('xy') ? () => setShowContainer("colorPicker") : false} />
           </motion.div>
           <motion.div className="btn"
             initial="closed"
             animate={showContainer === "closed" ? "closed" : "opened"}
-            exit="closed"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
             variants={barIconVariants}>
             <FaImages onClick={() => setSceneModal(true)} />
           </motion.div>
           <motion.div className="expandbtn"
             initial="collapsed"
             animate={showContainer === "closed" ? "collapsed" : "open"}
-            exit="collapsed"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
             variants={{
               open: {
                 rotate: 180
@@ -353,21 +358,21 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
           <motion.div className="btn"
             initial="closed"
             animate={showContainer === "closed" ? "closed" : "opened"}
-            exit="closed"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
             variants={barIconVariants}>
             <FaLightbulb onClick={() => setShowContainer("lights")} />
           </motion.div>
           <motion.div className={`btn ${lightsCapabilities.includes('ct') ? "" : "disabled"}`}
             initial="closed"
             animate={showContainer === "closed" ? "closed" : "opened"}
-            exit="closed"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
             variants={barIconVariants}>
-            <MdInvertColors
-              onClick={() => setShowContainer("colorTempPicker")}
-            />
+            <MdInvertColors onClick={lightsCapabilities.includes('ct') ? () => setShowContainer("colorTempPicker") : false}/>
           </motion.div>
-        </AnimatePresence>
       </div>
+      </AnimatePresence>
     </div>
   );
 };
