@@ -42,11 +42,13 @@ export default function KelvinPicker({
   useEffect(() => {
     if (pickerRef.current && !picker.current) {
       picker.current = new iro.ColorPicker(pickerRef.current, {
+        layoutDirection: 'horizontal',
         layout: [
           {
             component: iro.ui.Slider,
             options: {
-              sliderType: 'kelvin'
+              sliderType: 'kelvin',
+              sliderShape: 'circle'
             }
           },
         ],
