@@ -57,7 +57,7 @@ const About = () => {
 
         <div className="contactCard">
           <div className="name">Mevel</div>
-          <div className="position">Early adopter & </div>
+          <div className="position">Maintainer & Support </div>
           <div className="about">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
           <div className="iconbox">
             <a href="https://github.com"><FaGithub /></a>
