@@ -1,4 +1,5 @@
 .contentContainer {
+    webkit-backdrop-filter: blur(30px);
     backdrop-filter: blur(30px);
     background: rgba(255, 255, 255, 0.09);
     border-radius: 20px;
@@ -36,3 +37,60 @@
         color: #eee;
     }
 }
+
+.creditGrid{
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+
+    .headline{
+
+    }
+
+
+    .contactCard{
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+        width: 300px;
+        webkit-backdrop-filter: blur(30px);
+        backdrop-filter: blur(30px);
+        background: rgba(255, 255, 255, 0.09);
+        border-radius: 20px;
+        box-sizing: border-box;
+        padding: 20px;
+        text-align: center;
+        color: #fff;
+
+        a{
+            color:#bbb;
+        }
+    
+        .name{
+            width: 100%;
+            margin-bottom: 20px;
+            font-size: 25px;
+            letter-spacing: 5px;
+        }
+    
+        .position{
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    
+        .about{
+            width: 100%;
+        }
+
+        .iconbox{
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+
+            svg{
+                margin-right: 20px;
+            }
+        }
+    }
+}
+

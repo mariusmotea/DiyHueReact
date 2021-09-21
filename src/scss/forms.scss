@@ -8,7 +8,7 @@
       color: #eee;
     }
   
-    input, .Dropdown-control{
+    input, .Dropdown-control, textarea{
       padding: 15px;
       border: none;
       background: rgba(255, 255, 255, 0.2);
@@ -23,6 +23,11 @@
       background: none;
     }
   
+    textarea{
+      font-size: 12px;
+      
+    }
+
     .Dropdown-root.is-open {
       .Dropdown-control {
         border-bottom-right-radius: 0;
