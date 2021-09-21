@@ -166,9 +166,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
         <div className="text">
           <p className="name"> {group.name} </p>
           <p className="subtext">
-
-            {onlineLights()}
-            lamps online
+            {onlineLights()} lamps online
           </p>
         </div>
         <div className="switchContainer">
