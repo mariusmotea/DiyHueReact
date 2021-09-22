@@ -213,6 +213,12 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
         </AnimatePresence>
       </div>
       <AnimateSharedLayout>
+      <div className="row buttons">
+        <div className="btn"><FaPalette /></div>
+        <div className="btn"><MdInvertColors /></div>
+        <div className="btn"><FaImages /></div>
+        <div className="btn"><FaLightbulb /></div>
+      </div>
         <motion.div className="row colorpicker">
           <AnimatePresence initial={false}>
 

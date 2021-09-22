@@ -48,6 +48,41 @@
       justify-content: center;
     }
 
+    &.buttons{
+      width: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      display: flex;
+      justify-content: center;
+
+      .btn {
+        text-align: center;
+        color: rgba(255, 255, 255, 0.6);
+        margin-right: 10px;
+        margin-left: 10px;
+        font-size: 20px;
+        padding: 5px;
+        transition: color 0.1s ease;
+  
+        &.active{
+          color: rgba(4, 154, 255, 0.8);
+        }
+  
+        &:hover{
+          color: rgba(255, 255, 255, 0.9);
+          cursor: pointer;
+          transition: color 0.2s ease;
+        }
+  
+        &.disabled{
+          color: rgba(255, 255, 255, 0.4);
+          cursor: not-allowed;
+          pointer-events: all !important;
+        }
+      }      
+    }
+
     .gradient {
       flex: 0 0 auto;
       width: 50px;
