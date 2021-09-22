@@ -213,13 +213,35 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
         </AnimatePresence>
       </div>
       <AnimateSharedLayout>
-      <div className="row buttons">
-        <div className="btn"><FaPalette /></div>
-        <div className="btn"><MdInvertColors /></div>
-        <div className="btn"><FaImages /></div>
-        <div className="btn"><FaLightbulb /></div>
-      </div>
-        <motion.div className="row colorpicker">
+        {showContainer !== "closed" && (
+          <motion.div className="row buttons"
+            initial="closed"
+            animate={showContainer === "closed" ? "closed" : "opened"}
+            variants={barIconVariants}>
+            <motion.div className={`btn ${lightsCapabilities.includes('xy') ? "" : "disabled"}`}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+              variants={barIconVariants}>
+              <FaPalette onClick={lightsCapabilities.includes('xy') ? () => setShowContainer("colorPicker") : false} />
+            </motion.div>
+            <motion.div className="btn"
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}>
+              <FaImages onClick={() => setSceneModal(true)} />
+            </motion.div>
+            <motion.div className="btn"
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}>
+              <FaLightbulb onClick={() => setShowContainer("lights")} />
+            </motion.div>
+            <motion.div className={`btn ${lightsCapabilities.includes('ct') ? "" : "disabled"}`}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}>
+              <MdInvertColors onClick={lightsCapabilities.includes('ct') ? () => setShowContainer("colorTempPicker") : false} />
+            </motion.div>
+          </motion.div >
+      )}
+  <motion.div className="row colorpicker">
           <AnimatePresence initial={false}>
 
             {showContainer === "colorPicker" && (
@@ -315,26 +337,9 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
             )}
           </AnimatePresence>
         </motion.div>
-      </AnimateSharedLayout>
+      </AnimateSharedLayout >
       <AnimatePresence>
         <div className="row bottom">
-
-          <motion.div className={`btn ${lightsCapabilities.includes('xy') ? "" : "disabled"}`}
-            initial="closed"
-            animate={showContainer === "closed" ? "closed" : "opened"}
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-            variants={barIconVariants}>
-            <FaPalette onClick={lightsCapabilities.includes('xy') ? () => setShowContainer("colorPicker") : false} />
-          </motion.div>
-          <motion.div className="btn"
-            initial="closed"
-            animate={showContainer === "closed" ? "closed" : "opened"}
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-            variants={barIconVariants}>
-            <FaImages onClick={() => setSceneModal(true)} />
-          </motion.div>
           <motion.div className="expandbtn"
             initial="collapsed"
             animate={showContainer === "closed" ? "collapsed" : "open"}
@@ -355,25 +360,9 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
 
             <FaChevronDown onClick={() => defaultContainerView()} />
           </motion.div>
-          <motion.div className="btn"
-            initial="closed"
-            animate={showContainer === "closed" ? "closed" : "opened"}
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-            variants={barIconVariants}>
-            <FaLightbulb onClick={() => setShowContainer("lights")} />
-          </motion.div>
-          <motion.div className={`btn ${lightsCapabilities.includes('ct') ? "" : "disabled"}`}
-            initial="closed"
-            animate={showContainer === "closed" ? "closed" : "opened"}
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-            variants={barIconVariants}>
-            <MdInvertColors onClick={lightsCapabilities.includes('ct') ? () => setShowContainer("colorTempPicker") : false} />
-          </motion.div>
         </div>
       </AnimatePresence>
-    </div>
+    </div >
   );
 };
 
