@@ -19,13 +19,15 @@ const About = () => {
               value="Hue-Emulator Version: %Version%"
             />
           </div>
-        <p>Supported Devices</p>
-        <a href="https://diyhue.readthedocs.io/en/latest/">Link</a>
-        
-        <p>Support:</p>
-        <a href="https://github.com/diyhue/diyhue"><FaGithub /></a>
-        <a href="https://slackinvite.squishedmooo.com/"><FaSlack /></a>
-
+        <div className="supportsection">
+          <p>Supported Devices:</p>
+          <a href="https://diyhue.readthedocs.io/en/latest/">Link</a>
+        </div>
+        <div className="supportsection">
+          <p>Support:</p>
+          <a href="https://github.com/diyhue/diyhue"><FaGithub /></a>
+          <a href="https://slackinvite.squishedmooo.com/"><FaSlack /></a>
+        </div>
         Ko-Fi Button
       </div>
 
