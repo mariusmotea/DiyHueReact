@@ -154,13 +154,9 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
         <div className="gradient" style={getStyle()}>
 
           {group["type"] === "Zone" ? (
-            <FaCouch
-              style={{
-                color: "#8400FF",
-              }}
-            />
+            <BsFillHouseDoorFill style={{ fill: group.state["any_on"] ? "#3a3a3a" : "#ddd" }} />
           ) : (
-              <BsFillHouseDoorFill style={{ color: "#8400FF" }} />
+              <FaCouch style={{ fill: group.state["any_on"] ? "#3a3a3a" : "#ddd" }} />
             )}
         </div>
         <div className="text">
@@ -314,8 +310,8 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
           </AnimatePresence>
         </motion.div>
       </AnimateSharedLayout>
-        <AnimatePresence>
-      <div className="row bottom">
+      <AnimatePresence>
+        <div className="row bottom">
 
           <motion.div className={`btn ${lightsCapabilities.includes('xy') ? "" : "disabled"}`}
             initial="closed"
@@ -367,9 +363,9 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
             variants={barIconVariants}>
-            <MdInvertColors onClick={lightsCapabilities.includes('ct') ? () => setShowContainer("colorTempPicker") : false}/>
+            <MdInvertColors onClick={lightsCapabilities.includes('ct') ? () => setShowContainer("colorTempPicker") : false} />
           </motion.div>
-      </div>
+        </div>
       </AnimatePresence>
     </div>
   );
