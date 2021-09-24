@@ -57,7 +57,7 @@ export default function KelvinPicker({
       picker.current.on("input:end", onChange);
     }
   }, [onChange]);
-  return <div
+  return <div style={{height: 250}}
     ref={pickerRef}>
   </div>;
 }
