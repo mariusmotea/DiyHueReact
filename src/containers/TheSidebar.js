@@ -5,7 +5,7 @@ import {
   FaLink,
   FaCog,
   FaSignOutAlt,
-  FaInfo,
+  FaInfoCircle,
   FaExclamationTriangle,
 } from "react-icons/fa";
 import { MdSettingsRemote } from "react-icons/md";
@@ -89,7 +89,7 @@ const TheSidebar = ({ showSidebar }) => {
         </a>
         <a href="#about">
           <li>
-            <FaInfo style={{ color: "#fff" }} /> <p>About</p>
+            <FaInfoCircle style={{ color: "#fff" }} /> <p>About</p>
           </li>
         </a>
         <a href="/logout">

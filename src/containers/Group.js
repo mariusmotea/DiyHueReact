@@ -1,7 +1,6 @@
 import {
   FaCouch,
   FaChevronDown,
-  FaChevronUp,
   FaImages,
   FaLightbulb,
   FaPalette,
@@ -224,6 +223,11 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
               variants={barIconVariants}>
               <FaPalette onClick={lightsCapabilities.includes('xy') ? () => setShowContainer("colorPicker") : false} />
             </motion.div>
+            <motion.div className={`btn ${lightsCapabilities.includes('ct') ? "" : "disabled"}`}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}>
+              <MdInvertColors onClick={lightsCapabilities.includes('ct') ? () => setShowContainer("colorTempPicker") : false} />
+            </motion.div>
             <motion.div className="btn"
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}>
@@ -234,11 +238,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
               whileTap={{ scale: 0.9 }}>
               <FaLightbulb onClick={() => setShowContainer("lights")} />
             </motion.div>
-            <motion.div className={`btn ${lightsCapabilities.includes('ct') ? "" : "disabled"}`}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}>
-              <MdInvertColors onClick={lightsCapabilities.includes('ct') ? () => setShowContainer("colorTempPicker") : false} />
-            </motion.div>
+            
           </motion.div >
       )}
   <motion.div className="row colorpicker">
