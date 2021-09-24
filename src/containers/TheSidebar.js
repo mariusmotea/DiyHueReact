@@ -5,24 +5,15 @@ import {
   FaLink,
   FaCog,
   FaSignOutAlt,
-  FaInstagram,
-  FaBars,
-  FaRing
+  FaInfo,
+  FaExclamationTriangle,
 } from "react-icons/fa";
-import { SiZigbee } from "react-icons/si";
-import {
-  RiHomeWifiLine,
-  RiAlarmWarningLine,
-  RiMessage2Line,
-  RiBubbleChartLine,
-} from "react-icons/ri";
 import { MdSettingsRemote } from "react-icons/md";
-import { IoEllipsisVerticalCircleOutline } from "react-icons/io5";
-import { SiAboutDotMe } from "react-icons/si";
-//###########
-import {ArchetypesFloorLantern } from "../icons/ArchetypesFloorLantern"
-//##########
-
+import {Bridge } from "../icons/Bridge"
+import {Zigbee } from "../icons/Zigbee"
+import {Deconz } from "../icons/Deconz"
+import {Diybridge } from "../icons/Diybridge"
+import {Tradfri } from "../icons/Tradfri"
 import logo from "../static/images/logo.svg";
 import "../scss/sidebar.scss";
 
@@ -52,7 +43,7 @@ const TheSidebar = ({ showSidebar }) => {
         </a>
         <a href="#bridge">
           <li>
-            <ArchetypesFloorLantern style={{ color: "#92FFFF" }} /> <p>Bridge</p>
+            <Diybridge style={{ color: "#92FFFF" }} /> <p>Bridge</p>
           </li>
         </a>
         <a href="#devices">
@@ -62,33 +53,33 @@ const TheSidebar = ({ showSidebar }) => {
         </a>
         <a href="#mqtt">
           <li>
-            <RiMessage2Line style={{ color: "#0084FF" }} /> <p>MQTT</p>
+            <Zigbee style={{ color: "#0084FF" }} /> <p>MQTT</p>
           </li>
         </a>
         <a href="#deconz">
           <li>
-            <RiHomeWifiLine style={{ color: "#42A138" }} /> <p>Deconz</p>
+            <Deconz style={{ color: "#42A138" }} /> <p>Deconz</p>
           </li>
         </a>
         <a href="#tradfri">
           <li>
-            <IoEllipsisVerticalCircleOutline style={{ color: "#CCA138" }} />{" "}
+            <Tradfri style={{ color: "#CCA138" }} />{" "}
             <p>Tradfri</p>
           </li>
         </a>
         <a href="#hue">
           <li>
-            <ArchetypesFloorLantern style={{ color: "#8400FF" }} /> <p>Hue Bridge</p>
+            <Bridge style={{ color: "#8400FF" }} /> <p>Hue Bridge</p>
           </li>
         </a>
         <a href="#diyhue">
           <li>
-            <SiZigbee style={{ color: "#16a085" }} /> <p>DiyHue Bridge</p>
+            <Bridge style={{ color: "#16a085" }} /> <p>DiyHue Bridge</p>
           </li>
         </a>
         <a href="#alarm">
           <li>
-            <RiAlarmWarningLine style={{ color: "#c0392b" }} /> <p>Alarm</p>
+            <FaExclamationTriangle style={{ color: "#c0392b" }} /> <p>Alarm</p>
           </li>
         </a>
         <a href="#settings">
@@ -98,7 +89,7 @@ const TheSidebar = ({ showSidebar }) => {
         </a>
         <a href="#about">
           <li>
-            <SiAboutDotMe style={{ color: "#fff" }} /> <p>About</p>
+            <FaInfo style={{ color: "#fff" }} /> <p>About</p>
           </li>
         </a>
         <a href="/logout">
