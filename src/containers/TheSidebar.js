@@ -26,8 +26,6 @@ import {ArchetypesFloorLantern } from "../icons/ArchetypesFloorLantern"
 import logo from "../static/images/logo.svg";
 import "../scss/sidebar.scss";
 
-import { cuBridge } from '../static/icons/bridge';
-
 const TheSidebar = ({ showSidebar }) => {
   return (
     <div className={`columnLeft ${showSidebar ? "" : "active"}`}>
@@ -80,7 +78,7 @@ const TheSidebar = ({ showSidebar }) => {
         </a>
         <a href="#hue">
           <li>
-            <cuBridge style={{ color: "#8400FF" }} /> <p>Hue Bridge</p>
+            <ArchetypesFloorLantern style={{ color: "#8400FF" }} /> <p>Hue Bridge</p>
           </li>
         </a>
         <a href="#diyhue">

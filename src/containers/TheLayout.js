@@ -10,28 +10,7 @@ const TheLayout = ({ HOST_IP, API_KEY }) => {
 
   return (
     <>
-      <motion.section
-        key="content"
-        initial="collapsed"
-        animate= {showSidebar ? "open" : "collapsed"}
-      exit="collapsed"
-        variants={{
-        open: {
-          opacity: 1,
-          x: 0,
-        },
-        collapsed: {
-          opacity: 0,
-          x: -100,
-        },
-      }}
-      transition={{
-        duration: 0.5,
-      }}
-      >
-
-        <TheSidebar showSidebar={showSidebar} />
-    </motion.section>
+      <TheSidebar showSidebar={showSidebar} />
     <div className="columnRight">
       <TheHeader
         HOST_IP={HOST_IP}
