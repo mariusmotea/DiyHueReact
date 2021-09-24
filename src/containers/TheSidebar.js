@@ -19,6 +19,9 @@ import {
 import { MdSettingsRemote } from "react-icons/md";
 import { IoEllipsisVerticalCircleOutline } from "react-icons/io5";
 import { SiAboutDotMe } from "react-icons/si";
+//###########
+import {ArchetypesFloorLantern } from "../icons/ArchetypesFloorLantern"
+//##########
 
 import logo from "../static/images/logo.svg";
 import "../scss/sidebar.scss";
@@ -51,7 +54,7 @@ const TheSidebar = ({ showSidebar }) => {
         </a>
         <a href="#bridge">
           <li>
-            <FaRing style={{ color: "#92FFFF" }} /> <p>Bridge</p>
+            <ArchetypesFloorLantern style={{ color: "#92FFFF" }} /> <p>Bridge</p>
           </li>
         </a>
         <a href="#devices">
