@@ -4,6 +4,7 @@ import {
   FaGlobeEurope,
   FaSlack
 } from "react-icons/fa";
+import kofi from "../static/images/kofi.svg";
 
 const About = () => {
   return (
@@ -28,8 +29,12 @@ const About = () => {
           <a href="https://github.com/diyhue/diyhue"><FaGithub /></a>
           <a href="https://slackinvite.squishedmooo.com/"><FaSlack /></a>
         </div>
-        Ko-Fi Button
+        <div className="coffee">
+          <p>Buy me a Coffee:</p>
+          <a href="https://ko-fi.com/diyhue"><img src={kofi} alt="kofi" /></a>
+        </div>
       </div>
+
 
 
       <div className="creditGrid">
