@@ -46,8 +46,8 @@ const About = () => {
           <div className="about">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
           <div className="iconbox">
             <a href="https://github.com/mariusmotea"><FaGithub /></a>
-            <a href=""><FaTwitter /></a>
-            <a href=""><FaGlobeEurope /></a>
+            <a href="https://twitter.com"><FaTwitter /></a>
+            <a href="https://diyhue.org"><FaGlobeEurope /></a>
           </div>
         </div>
 
@@ -57,8 +57,8 @@ const About = () => {
           <div className="about">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
           <div className="iconbox">
             <a href="https://github.com/cheesemarathon"><FaGithub /></a>
-            <a href=""><FaTwitter /></a>
-            <a href=""><FaGlobeEurope /></a>
+            <a href="https://twitter.com"><FaTwitter /></a>
+            <a href="https://diyhue.org"><FaGlobeEurope /></a>
           </div>
         </div>
 
@@ -68,8 +68,8 @@ const About = () => {
           <div className="about">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
           <div className="iconbox">
             <a href="https://github.com"><FaGithub /></a>
-            <a href=""><FaTwitter /></a>
-            <a href=""><FaGlobeEurope /></a>
+            <a href="https://twitter.com"><FaTwitter /></a>
+            <a href="https://diyhue.org"><FaGlobeEurope /></a>
           </div>
         </div>
 

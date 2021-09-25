@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
 import axios from "axios";
-import logo from "../static/images/logo.svg";
 import { motion } from "framer-motion";
 
 const TheHeader = ({ HOST_IP, showSidebar, setShowSidebar, API_KEY }) => {
