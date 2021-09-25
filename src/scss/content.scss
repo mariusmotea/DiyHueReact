@@ -1,7 +1,8 @@
 .contentContainer {
-    webkit-backdrop-filter: blur(30px);
     backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
     background: rgba(255, 255, 255, 0.09);
+    background: linear-gradient(45deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,0.2) 100%);
     border-radius: 20px;
     box-sizing: border-box;
     padding: 20px;
