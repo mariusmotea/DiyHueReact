@@ -209,6 +209,25 @@
 
 @-moz-document url-prefix() {
   .groupCard {
-    background: rgba(0, 0, 0, 0.5);
+    
+    position: relative;
+
+
   }
+
+  .groupCard:after{
+    content: '';
+    background: url(../static/images/background.jpg) no-repeat 50%;
+    background-size: cover;
+    filter: blur(30px);
+    transform: scale(1.1);
+    display: flex;
+    position: absolute; 
+    height: 100%;
+    width: 100%;
+    top:0;
+    left:0;
+    z-index: -1;
+  }
+
 }
