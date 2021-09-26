@@ -49,6 +49,10 @@
     &.colorpicker{
       align-items: center;
       justify-content: center;
+
+      section{
+        padding: 20px;
+      }
     }
 
     &.buttons{
@@ -207,7 +211,9 @@
 
 }
 
-@-moz-document url-prefix() {
+
+
+@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
   .groupCard {
     
     position: relative;

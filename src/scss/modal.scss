@@ -49,12 +49,11 @@
 @media screen and (max-width: 750px) {
 }
 
-@-moz-document url-prefix() {
+@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
 
-    .ReactModalPortal {
-        .ReactModal__Overlay {
+  .ReactModal__Content--after-open{
           
-          background-color: rgba(252, 8, 8, .5);
+          background: rgba(252, 8, 8, .5) !important;
         }
-    }
+    
 }
