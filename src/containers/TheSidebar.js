@@ -28,7 +28,7 @@ const TheSidebar = ({ showSidebar }) => {
       <ul>
         <a href="#home">
           <li>
-            <FaHome style={{ color: "#0092FF" }} /> <p>Home</p>
+            <FaHome style={{ color: "#0092FF" }} /> <p>Groups</p>
           </li>
         </a>
         <a href="#lights">
@@ -70,11 +70,6 @@ const TheSidebar = ({ showSidebar }) => {
         <a href="#hue">
           <li>
             <Bridge style={{ color: "#8400FF" }} /> <p>Hue Bridge</p>
-          </li>
-        </a>
-        <a href="#diyhue">
-          <li>
-            <Bridge style={{ color: "#16a085" }} /> <p>DiyHue Bridge</p>
           </li>
         </a>
         <a href="#alarm">
