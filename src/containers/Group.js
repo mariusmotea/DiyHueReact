@@ -80,12 +80,20 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
     axios.put(`${HOST_IP}/api/${api_key}/groups/${id}/action`, newState);
   };
 
-  const onlineLights = () => {
-    let counter = 0;
+  const statusLights = () => {
+    let onLights = 0;
+    let offLights = 0;
     for (const [index, light] of group.lights.entries()) {
-      if (lights[light]["state"]["reachable"] === true) counter = counter + 1;
+      if (lights[light]["state"]["on"] === true) onLights = onLights + 1;
+      else  offLights = offLights + 1;
     }
-    return counter;
+    if (onLights === 0) {
+      return "All lights off"
+    } else if ( offLights === 0) {
+        return "All lights on"
+    } else {
+       return onLights + " lights on"
+    }
   };
 
   const debouncedChangeHandler = useCallback(
@@ -161,7 +169,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
         <div className="text">
           <p className="name"> {group.name} </p>
           <p className="subtext">
-            {onlineLights()} lamps online
+            {statusLights()}
           </p>
         </div>
         <div className="switchContainer">
@@ -238,7 +246,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
               whileTap={{ scale: 0.9 }}>
               <FaLightbulb onClick={() => setShowContainer("lights")} />
             </motion.div>
-            
+
           </motion.div >
       )}
   <motion.div className="row colorpicker">
