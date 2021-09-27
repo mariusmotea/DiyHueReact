@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { TheContent, TheSidebar, TheHeader } from "./index";
-import { motion } from "framer-motion";
 
 const TheLayout = ({ HOST_IP, API_KEY }) => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
