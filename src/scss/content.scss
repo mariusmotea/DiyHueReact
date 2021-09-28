@@ -79,7 +79,7 @@
         flex-direction: column;
         margin-right: 20px;
         width: 300px;
-        webkit-backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
         backdrop-filter: blur(30px);
         background: rgba(255, 255, 255, 0.09);
         border-radius: 20px;
@@ -124,10 +124,12 @@
 
 
 @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-    .contentContainer {
-     background: rgba(0, 0, 0, .6);
+    .contentContainer{
+        background: rgba(0, 0, 0, .6);
     }
-  
-   
+
+    .contactCard{
+        background: rgba(0, 0, 0, .6) !important;
+    }
   
   }
