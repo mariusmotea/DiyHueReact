@@ -122,3 +122,12 @@
     }
 }
 
+
+@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .contentContainer {
+     background: rgba(0, 0, 0, .6);
+    }
+  
+   
+  
+  }

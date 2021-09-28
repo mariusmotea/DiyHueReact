@@ -166,7 +166,7 @@ body {
   }
 }
 
-@-moz-document url-prefix() {
+@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
   .columnLeft,
   .topbarRight {
     background: rgba(0, 0, 0, 0.5);
