@@ -250,7 +250,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
           </motion.div >
       )}
   <motion.div className="row colorpicker">
-          <AnimatePresence initial={false}>
+          <AnimatePresence initial={false} exitBeforeEnter>
 
             {showContainer === "colorPicker" && (
               <motion.section
