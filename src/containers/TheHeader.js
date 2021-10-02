@@ -57,7 +57,7 @@ const TheHeader = ({ HOST_IP, showSidebar, setShowSidebar, API_KEY }) => {
         onClick={() => setShowSidebar(!showSidebar)}>
         <FaBars /></motion.div>
       <div className="onbtn">
-        <p>All lights on/off</p>
+        <p>Turn all lights {group0State? "off" : "on"}</p>
         <div className="switchContainer">
           <label className="switch">
             <input
