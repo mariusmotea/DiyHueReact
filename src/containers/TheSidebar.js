@@ -25,7 +25,7 @@ const TheSidebar = ({ showSidebar }) => {
     <AnimatePresence initial={false}>
       {showSidebar && (
         <motion.div className="columnLeft"
-          animate={{ width: 192 }}
+          animate={{ width: 180 }}
           initial={{ width: 0 }}
           exit={{ width: 0 }}>
           <div className="topbarLeft active">
