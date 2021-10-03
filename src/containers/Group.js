@@ -300,7 +300,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
                   },
                 }}
                 transition={{
-                  duration: 0.8,
+                  duration: 0.3,
                 }}
               >
                 <ColorTempPicker
@@ -328,7 +328,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
                   },
                 }}
                 transition={{
-                  duration: 0.8,
+                  duration: 0.3,
                 }}
               >
 
@@ -362,7 +362,7 @@ const Group = ({ HOST_IP, api_key, id, group, lights, scenes }) => {
               },
             }}
             transition={{
-              duration: 0.8,
+              duration: 0.3,
             }}
           >
 
