@@ -52,12 +52,10 @@ const About = () => {
 
         <div className="contactCard">
           <div className="name">cheesemarathon</div>
-          <div className="position">Contributor & </div>
-          <div className="about">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+          <div className="position">Github & CI/CD Wizard</div>
+          <div className="about">Created and maintaining the Github repository, Docker images and Github actions.</div>
           <div className="iconbox">
             <a href="https://github.com/cheesemarathon"><FaGithub /></a>
-            <a href="https://twitter.com"><FaTwitter /></a>
-            <a href="https://diyhue.org"><FaGlobeEurope /></a>
           </div>
         </div>
 
