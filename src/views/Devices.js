@@ -2,6 +2,13 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Device from "../containers/Device";
 import Flash from "../containers/Flash";
+import { 
+  BsBrightnessHighFill,
+  BsBrightnessHigh,
+  BsPower,
+} from "react-icons/bs";
+import { IoColorFilterOutline } from "react-icons/io5"
+
 
 const Devices = ({ HOST_IP, API_KEY }) => {
   const [devices, setDevices] = useState({});
@@ -59,6 +66,31 @@ const Devices = ({ HOST_IP, API_KEY }) => {
       </div>
     </div>
     </div>
+
+    <div className="hueSwitch">
+      <div className="inner">
+        <div className="button top"><BsPower /></div>
+        <div className="spacer"></div>
+        <div className="button middle"><BsBrightnessHighFill /></div>
+        <div className="button middle"><BsBrightnessHigh /></div>
+        <div className="spacer"></div>
+        <div className="button bottom"></div>
+      </div>
+    </div>
+
+    <div className="genericSwitch">
+      <div className="inner">
+        <div className="row left">
+          <div className="button"><BsPower /></div>
+          <div className="button"></div>
+        </div>
+        <div className="row right">
+          <div className="button"><BsBrightnessHighFill /></div>
+          <div className="button"><IoColorFilterOutline /></div>
+        </div>
+      </div>
+    </div>
+
     </div>
   );
 };

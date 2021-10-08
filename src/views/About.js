@@ -44,7 +44,7 @@ const About = () => {
         <div className="contactCard">
           <div className="name">Marius</div>
           <div className="position">Main Developer & Mastermind of DiyHue</div>
-          <div className="about">Developed and maintaining basically everything. Thousands of hours spent for reverse engineering, bug fixing and trying to implement every possible feature in his project.</div>
+          <div className="about">Developing and maintaining basically everything. Thousands of hours spent for reverse engineering, bug fixing and trying to implement every possible feature in his project.</div>
           <div className="iconbox">
             <a href="https://github.com/mariusmotea"><FaGithub /></a>
           </div>
